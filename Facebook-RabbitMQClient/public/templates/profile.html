@@ -1,0 +1,93 @@
+<div ng-controller="ProfileController" ng-init="initFunction()">
+	<div class="row">
+		<div class="row">
+			<div class="col-xs-2">
+				<div class="row">
+					<h4 clas="text-left">Groups</h4>
+					<ul style="list-style-type: none; padding-left: initial;">
+						<li ng-repeat="group in groups">
+							<h5>
+								<a href="" ng-click="getTemplate(group)"><strong>{{
+										group }}</strong></a>
+							</h5>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-xs-6">
+				<div class="row">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<div>
+								<span class="glyphicon glyphicon-pencil"></span> Update Status
+							</div>
+						</div>
+						<div class="panel-body">
+							<form role="form">
+								<div class="form-group">
+									<div class="row"
+										style="border-bottom: 1px solid #E9EAED; padding-bottom: inherit;">
+										<div class="col-xs-1">
+											<span class="glyphicon glyphicon-user"></span>
+										</div>
+										<div class="col-xs-11">
+											<textarea class="form-control" type="text" ng-model="newPost"
+												style="border: 0px;" placeholder="What's on your mind?"></textarea>
+										</div>
+									</div>
+
+									<button type="button" class="btn btn-primary btn-xs pull-right"
+										style="background: #47639E;" ng-click="postNew()">Post</button>
+
+									<ul class="list-inline">
+										<li><a href=""><i class="glyphicon glyphicon-upload"></i></a></li>
+										<li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li>
+										<li><a href=""><i
+												class="glyphicon glyphicon-map-marker"></i></a></li>
+									</ul>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+
+				<div class="row" ng-repeat="feed in newfeedDetails">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<span class="pull-right">{{ feed.timestamp |
+								date:"MM/dd/yyyy 'at' h:mma" }}</span> {{ feed.userid }}
+						</div>
+						<div class="panel-body">
+							<div>{{ feed.feed }}</div>
+						</div>
+						<div style="border-top: 1px soli #E9EAED;">
+							<ul class="list-inline" style="padding-left: 2%;">
+								<li><a href=""><i class="glyphicon glyphicon-thumbs-up"></i></a>
+									Like</li>
+								<li><a href=""><i class="glyphicon glyphicon-comment"></i></a>
+									Comment</li>
+								<li><a href=""><i
+										class="glyphicon glyphicon-map-marker"></i></a> Share</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-3">
+				<div class="panel panel-default">
+					<div class="panel-heading">About the application</div>
+					<div class="panel-body">
+						<div>
+							<p>This application is a prototype of the Facebook. It
+								includes features like user sign up, sign in, sign out, user
+								accounts, interests, news feeds, friends and groups. It has been
+								developed using AngularJS, Node.js, Express, MySQL and
+								Bootstrap. It is an individual project for CmpeE273.</p>
+						</div>
+					</div>
+					<div class="panel-footer"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
